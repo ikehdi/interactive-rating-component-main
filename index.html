@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container ">
+  <div class="content">
+    <div class="img">
+      <img src="./images/icon-star.svg" alt="">
+    </div>
+    <h1>
+      How did we do?</h1>
+      <p>Please let us know how we did with your <br> support request. All feedback is appreciated <br>
+        to help us improve our offering!</p>
+        <div class="btn">
+<ul>
+  <li>1</li>
+  <li >2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+<button onclick="changeDisplay()">submit</button>
+        </div>
+  </div>
+</div>
+<div class="container2 hide">
+  <div class="content2">
+    <div class="img">
+      <img src="./images/illustration-thank-you.svg" alt="">
+    </div>
+    <h1>
+      Thank You !</h1>
+      <p>We appreciate you taking the time to give a rating <br> if you ever need more support, dont hesistate to get in touch</p>
+        
+  </div>
+</div>
+
+  <!-- Rating state start -->
+
+
+  
+
+
+
+
+  <script>
+  const stars = document.querySelectorAll(".btn ul li");
+
+stars.forEach((star , index1) => {
+  star.addEventListener("click" , () => {
+    stars.forEach((star , index2) => {
+      index1 >= index2 ? star.classList.add("active") : star.classList.remove("active")
+    })
+  })
+})
+const container = document.querySelector(".container2")
+const container2 = document.querySelector(".container")
+function changeDisplay(){
+container.classList.toggle("hide")
+container2.classList.toggle("none")
+}
+  </script>
+</body>
+</html>
